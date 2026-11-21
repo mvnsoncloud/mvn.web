@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Feed — MVN.WEB</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fed.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">MVN<span>.WEB</span></a>
+    <div class="nav-links">
+      <button id="logoutBtn" class="btn btn-outline">Log Out</button>
+    </div>
+  </nav>
+
+  <main class="feed-layout">
+    <!-- Left Profile Card -->
+    <aside class="profile-sidebar">
+      <div class="avatar-large" id="profileAvatar">M</div>
+      <h3 id="profileName">Loading...</h3>
+      <p class="profile-role" id="profileRole">Tech Builder</p>
+      <hr style="border-color: var(--border-blue); margin-bottom: 1rem;" />
+      <small style="color: var(--text-muted);">MY TECH STACK</small>
+      <div class="sidebar-skills" id="profileSkills"></div>
+    </aside>
+
+    <!-- Main Feed Column -->
+    <section>
+      <input
+        type="text"
+        id="searchFeed"
+        class="search-bar"
+        placeholder="Search by skill (e.g. React, Python), role, or creator..."
+      />
+
+      <!-- Showcase Post Composer -->
+      <div class="composer-card">
+        <h3>Broadcast a Skill, Project, or Career Update</h3>
+        <form id="createPostForm">
+          <input
+            type="text"
+            id="postTitle"
+            placeholder="Headline (e.g. Available for Frontend React Contracts)"
+            required
+          />
+          <textarea
+            id="postContent"
+            rows="3"
+            placeholder="Describe what you built, your tech stack, or the roles you are looking for..."
+            required
+          ></textarea>
+          <div class="composer-row">
+            <input
+              type="text"
+              id="postSkills"
+              placeholder="Skills used (e.g. Next.js, TypeScript)"
+            />
+            <input
+              type="url"
+              id="postLink"
+              placeholder="Portfolio / GitHub URL (optional)"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Publish Showcase</button>
+        </form>
+      </div>
+
+      <!-- Dynamic Feed List -->
+      <div id="feedContainer"></div>
+    </section>
+  </main>
+
+  <script src="https://jsdelivr.net"></script>
+  <script src="config.js"></script>
+  <script src="supsbase.js"></script>
+  <script src="database.js"></script>
+  <script src="auth.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
